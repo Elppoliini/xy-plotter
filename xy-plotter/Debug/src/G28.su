@@ -1,0 +1,3 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+G28.cpp:10:1:G28::G28()	16	static
+G28.cpp:15:13:std::string G28::reply(std::vector<std::__cxx11::basic_string<char> >, Tasks*)	120	dynamic
