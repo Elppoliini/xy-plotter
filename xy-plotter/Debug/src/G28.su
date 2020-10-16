@@ -1,3 +1,8 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+Tasks.cpp:13:8:Tasks::Tasks()	16	static
+Tasks.cpp:13:8:Tasks::~Tasks()	16	static
+M11.h:18:2:M11::M11()	16	static
 G28.cpp:10:1:G28::G28()	16	static
-G28.cpp:15:13:std::string G28::reply(std::vector<std::__cxx11::basic_string<char> >, Tasks*)	120	dynamic
+M11.h:19:2:M11::~M11()	16	static
+G28.cpp:14:6:void G28::go_to_origo()	136	static
+G28.cpp:27:13:std::string G28::reply(std::vector<std::__cxx11::basic_string<char> >, Tasks*)	32	static

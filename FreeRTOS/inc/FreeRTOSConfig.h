@@ -69,8 +69,27 @@
 #define configQUEUE_REGISTRY_SIZE		10
 #define configGENERATE_RUN_TIME_STATS	0
 #define configUSE_MALLOC_FAILED_HOOK	1
-    
-#define configUSE_TIMERS                0
+
+/****************************************
+ * Added configurations to use EventGroupSetBitsFromISR:
+ * configUse_TIMERS set from 0 to 1
+ * Makinging Eventgroupsetbitsfromisr and timerpendfunctioncall active
+ * When setting the configUse_TIMERS to 1 we need to do also followin configuartions
+ * to timers task,queue and stack depth
+ ****************************************/
+#define configUSE_TIMERS                1
+
+#define INCLUDE_xEventGroupSetBitFromISR 		1
+#define INCLUDE_xTimerPendFunctionCall			1
+#define configTIMER_TASK_PRIORITY               3
+#define configTIMER_QUEUE_LENGTH                10
+#define configTIMER_TASK_STACK_DEPTH            configMINIMAL_STACK_SIZE
+
+/****************************************
+ * Added configurations ended
+ ****************************************/
+
+
 #define configUSE_NEWLIB_REENTRANT      1
 
 #define configINCLUDE_FREERTOS_TASK_C_ADDITIONS_H 1

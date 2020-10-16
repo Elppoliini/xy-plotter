@@ -1,0 +1,6 @@
+core_cm3.h:1323:22:void NVIC_EnableIRQ(IRQn_Type)	16	static
+core_cm3.h:1335:22:void NVIC_DisableIRQ(IRQn_Type)	16	static
+ritimer_15xx.h:107:20:void Chip_RIT_Enable(LPC_RITIMER_T*)	16	static
+ritimer_15xx.h:117:20:void Chip_RIT_Disable(LPC_RITIMER_T*)	16	static
+ritimer_15xx.h:151:20:void Chip_RIT_EnableCompClear(LPC_RITIMER_T*)	16	static
+SpeedSettings.cpp:15:6:void RIT_start(int, int, bool, bool)	56	static

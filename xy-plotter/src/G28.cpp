@@ -11,9 +11,21 @@ G28::G28() {
 	// TODO Auto-generated constructor stub
 
 }
+void G28::go_to_origo()
+{
+	M11 m11;
+	while(m11.checkLimYP() == true)
+	{
+		RIT_start(2,1000000/(1000*2),true, false);
+	}
+	while(m11.checkLimXP() == true)
+	{
+		RIT_start(2,1000000/(1000*2),false,false);
+	}
+}
 
 std::string G28::reply(std::vector<std::string> str_,struct Tasks *t){
 
-	return " \r\n";
-
+	go_to_origo();
+	return "OK\r\n";
 }

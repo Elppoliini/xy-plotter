@@ -1,6 +1,12 @@
+core_cm3.h:1405:22:void NVIC_SetPriority(IRQn_Type, uint32_t)	16	static
+ritimer_15xx.h:117:20:void Chip_RIT_Disable(LPC_RITIMER_T*)	16	static
+ritimer_15xx.h:181:20:void Chip_RIT_ClearIntStatus(LPC_RITIMER_T*)	16	static
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-xy-plotter.cpp:38:13:void prvSetupHardware()	8	static
-xy-plotter.cpp:47:15:LpcUartConfig LpcUart_Setup()	376	static
-xy-plotter.cpp:58:13:void vReadInput(void*)	600	static
-xy-plotter.cpp:86:6:void vConfigureTimerForRunTimeStats()	8	static
-xy-plotter.cpp:99:5:int main()	16	static
+I2C.h:18:2:I2C_config::I2C_config()	16	static
+XY-Plotter.cpp:50:13:void prvSetupHardware()	8	static
+XY-Plotter.cpp:67:6:bool isSimulator()	88	static
+XY-Plotter.cpp:80:15:LpcUartConfig LpcUart_Setup()	376	static
+XY-Plotter.cpp:97:13:void vReadInput(void*)	312	static
+XY-Plotter.cpp:122:6:void vConfigureTimerForRunTimeStats()	8	static
+XY-Plotter.cpp:128:6:void RIT_IRQHandler()	72	static
+XY-Plotter.cpp:176:5:int main()	16	static

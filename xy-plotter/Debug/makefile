@@ -9,6 +9,7 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/subdir.mk
+-include inc/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -38,25 +39,25 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: xy-plotter.axf
+all: XY-plotter.axf
 
 # Tool invocations
-xy-plotter.axf: $(OBJS) $(USER_OBJS)
+XY-plotter.axf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU C++ Linker'
-	arm-none-eabi-c++ -nostdlib -L"C:\Users\johan\Documents\School\Platforms\MCUXpressoIDE_11.2.0_4120\XY-projekt\lpc_board_nxp_lpcxpresso_1549\Debug" -L"C:\Users\johan\Documents\School\Platforms\MCUXpressoIDE_11.2.0_4120\XY-projekt\lpc_chip_15xx\Debug" -L"C:\Users\johan\Documents\School\Platforms\MCUXpressoIDE_11.2.0_4120\XY-projekt\FreeRTOS\Debug" -Xlinker -Map="xy-plotter.map" -Xlinker --cref -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "xy-plotter_Debug.ld" -o "xy-plotter.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-c++ -nostdlib -L"C:\Users\johan\Documents\School\Platforms\MCUXpressoIDE_11.2.0_4120\XY-projektV2\lpc_board_nxp_lpcxpresso_1549\Debug" -L"C:\Users\johan\Documents\School\Platforms\MCUXpressoIDE_11.2.0_4120\XY-projektV2\lpc_chip_15xx\Debug" -L"C:\Users\johan\Documents\School\Platforms\MCUXpressoIDE_11.2.0_4120\XY-projektV2\FreeRTOS\Debug" -Xlinker -Map="XY-plotter.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "usb_cdc_Debug.ld" -o "XY-plotter.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) xy-plotter.axf
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) XY-plotter.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "xy-plotter.axf"; # arm-none-eabi-objcopy -v -O binary "xy-plotter.axf" "xy-plotter.bin" ; # checksum -p LPC1549 -d "xy-plotter.bin";
+	-arm-none-eabi-size "XY-plotter.axf"; # arm-none-eabi-objcopy -v -O binary "XY-plotter.axf" "XY-plotter.bin" ; # checksum -p LPC1549 -d "XY-plotter.bin";
 	-@echo ' '
 
 .PHONY: all clean dependents post-build

@@ -9,8 +9,8 @@
 
 M2::M2() {
 	// TODO Auto-generated constructor stub
-
 }
+
 bool M2::isNumber(int pos){
 	int count=0;
 
@@ -50,7 +50,6 @@ bool M2::checkCommands(std::string letter,int pos){
 
 std::string M2::reply(std::vector<std::string> str_,struct Tasks *t){
 	str = str_;
-
 	if(checkCommands("U",1) == true && isNumber(1) == true){
 		t->penUp = stoi(str[1]);
 	}
@@ -59,7 +58,6 @@ std::string M2::reply(std::vector<std::string> str_,struct Tasks *t){
 		t->penDown = stoi(str[2]);
 	}
 	return "OK\r\n";
-
-
 }
+
 

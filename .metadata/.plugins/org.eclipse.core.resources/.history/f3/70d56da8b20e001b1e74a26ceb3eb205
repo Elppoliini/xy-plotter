@@ -1,0 +1,58 @@
+/*
+ * G1.cpp
+ *
+ *  Created on: 23 Sep 2020
+ *      Author: johan
+ */
+
+#include "G1.h"
+
+G1::G1() {
+	// TODO Auto-generated constructor stub
+
+}
+void G1::calibration()
+{
+	int countY, countX, sumY, sumX;
+
+	M11 m11;
+	G28 g28;
+	g28.go_to_origo();
+	for(int i=0;i<3;++i){
+		while(m11.checkLimYP() == true)
+		{
+			RIT_start(2,1000000/(1000*2),true);
+			countY++;
+		}
+		sumY = countY;
+		countY = 0;
+		while(m11.checkLimYM() == true)
+		{
+			RIT_start(2,1000000/(1000*2),true);
+			countY++;
+		}
+		sumY = countY;
+		countY = 0;
+		while(m11.checkLimXP() == true)
+		{
+			RIT_start(2,1000000/(1000*2),false);
+			countX++;
+		}
+		sumX = countX;
+		countX = 0;
+		while(m11.checkLimXP() == true)
+		{
+			RIT_start(2,1000000/(1000*2),false);
+		}
+		sumX = countX;
+		countX = 0;
+	}
+}
+
+std::string G1::reply(std::vector<std::string> str_,struct Tasks *t){
+
+	return " \r\n";
+
+}
+
+

@@ -1,0 +1,20 @@
+23:48:28 **** Incremental Build of configuration Debug for project XY-plotter ****
+make -r -j12 all 
+Building target: XY-plotter.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -L"C:\Users\johan\Documents\School\Platforms\MCUXpressoIDE_11.2.0_4120\XY-projektV2\lpc_board_nxp_lpcxpresso_1549\Debug" -L"C:\Users\johan\Documents\School\Platforms\MCUXpressoIDE_11.2.0_4120\XY-projektV2\lpc_chip_15xx\Debug" -L"C:\Users\johan\Documents\School\Platforms\MCUXpressoIDE_11.2.0_4120\XY-projektV2\FreeRTOS\Debug" -Xlinker -Map="XY-plotter.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -mcpu=cortex-m3 -mthumb -T "usb_cdc_Debug.ld" -o "XY-plotter.axf"  ./src/DigitalIoPin.o ./src/Fmutex.o ./src/G1.o ./src/G28.o ./src/I2C.o ./src/ITM_write.o ./src/LpcUart.o ./src/M1.o ./src/M10.o ./src/M11.o ./src/M2.o ./src/M4.o ./src/M5.o ./src/PWM_settings.o ./src/Parser.o ./src/SpeedSettings.o ./src/XY-Plotter.o ./src/cdc_desc.o ./src/cdc_main.o ./src/cdc_vcom.o ./src/cr_cpp_config.o ./src/cr_startup_lpc15xx.o ./src/crp.o ./src/heap_lock_monitor.o ./src/sysinit.o  ./inc/Tasks.o   -lfreertos -llpc_board_nxp_lpcxpresso_1549 -llpc_chip_15xx -lFreeRTOS
+Memory region         Used Size  Region Size  %age Used
+       MFlash256:       83792 B       256 KB     31.96%
+      Ram0_16_32:        4280 B        32 KB     13.06%
+          Ram2_4:          0 GB         4 KB      0.00%
+Finished building target: XY-plotter.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size "XY-plotter.axf"; # arm-none-eabi-objcopy -v -O binary "XY-plotter.axf" "XY-plotter.bin" ; # checksum -p LPC1549 -d "XY-plotter.bin";
+   text	   data	    bss	    dec	    hex	filename
+  81224	   2568	   1712	  85504	  14e00	XY-plotter.axf
+ 
+
+23:48:29 Build Finished. 0 errors, 0 warnings. (took 770ms)
+

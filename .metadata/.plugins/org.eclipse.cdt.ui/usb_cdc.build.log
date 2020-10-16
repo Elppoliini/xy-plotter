@@ -1,0 +1,6 @@
+15:49:18 **** Incremental Build of configuration Debug for project usb_cdc ****
+make -r -j12 all 
+make: Nothing to be done for 'all'.
+
+15:49:18 Build Finished. 0 errors, 0 warnings. (took 121ms)
+

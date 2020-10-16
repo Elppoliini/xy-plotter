@@ -1,4 +1,8 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-M11.cpp:12:6:void M11::checkStatus()	72	static
-Tasks.cpp:12:8:Tasks& Tasks::operator=(const Tasks&)	16	static
-M11.cpp:44:13:std::string M11::reply(std::vector<std::__cxx11::basic_string<char> >, Tasks*)	104	dynamic
+M11.cpp:11:6:bool M11::checkLimYP()	48	static
+M11.cpp:25:6:bool M11::checkLimYM()	48	static
+M11.cpp:39:6:bool M11::checkLimXP()	48	static
+M11.cpp:52:6:bool M11::checkLimXM()	48	static
+M11.cpp:65:6:void M11::checkAllLim()	16	static
+Tasks.cpp:13:8:Tasks& Tasks::operator=(const Tasks&)	16	static
+M11.cpp:73:13:std::string M11::reply(std::vector<std::__cxx11::basic_string<char> >, Tasks*)	96	static

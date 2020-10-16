@@ -1,0 +1,85 @@
+/*
+ * G1.cpp
+ *
+ *  Created on: 23 Sep 2020
+ *      Author: johan
+ */
+
+#include "G1.h"
+
+G1::G1() {
+	// TODO Auto-generated constructor stub
+
+}
+void G1::calibration()
+{
+	int countY, countX, sumY, sumX;
+
+	M11 m11;
+	G28 g28;
+	g28.go_to_origo();
+
+
+	for(int i=0;i<3;++i){
+		ITM_write("I:");
+		ITM_write(std::to_string(i).c_str());
+		ITM_write("\r\n");
+		vDirY(true);
+		while(m11.checkLimYP() == true)
+		{
+			RIT_start(2,1000000/(1000*2),true);
+			countY++;
+		}
+		ITM_write("countY:");
+		ITM_write(std::to_string(countY).c_str());
+		ITM_write("\r\n");
+		sumY = countY;
+		countY = 0;
+		vDirY(true);
+		while(m11.checkLimYM() == true)
+		{
+			RIT_start(2,1000000/(1000*2),true);
+			countY++;
+		}
+		ITM_write("countY:");
+		ITM_write(std::to_string(countY).c_str());
+		ITM_write("\r\n");
+		sumY = countY;
+		countY = 0;
+		vDirX(false);
+		while(m11.checkLimXP() == true)
+		{
+			RIT_start(2,1000000/(1000*2),false);
+			countX++;
+		}
+		ITM_write("countX:");
+		ITM_write(std::to_string(countX).c_str());
+		ITM_write("\r\n");
+		sumX= countX;
+		countX = 0;
+		vDirX(true);
+		while(m11.checkLimXP() == true)
+		{
+			RIT_start(2,1000000/(1000*2),false);
+		}
+		ITM_write("countX:");
+		ITM_write(std::to_string(countX).c_str());
+		ITM_write("\r\n");
+		sumX = countX;
+		countX = 0;
+	}
+	int totalX = sumX/3;
+	int totalY = sumY/3;
+	ITM_write(std::to_string(totalX).c_str());
+	ITM_write(" X");
+	ITM_write(std::to_string(totalY).c_str());
+
+}
+
+std::string G1::reply(std::vector<std::string> str_,struct Tasks *t){
+	calibration();
+	return " OK\r\n";
+
+}
+
+

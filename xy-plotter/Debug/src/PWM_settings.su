@@ -1,0 +1,5 @@
+swm_15xx.h:232:20:void Chip_SWM_MovablePortPinAssign(CHIP_SWM_PIN_MOVABLE_T, uint8_t, uint8_t)	16	static
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+PWM_settings.cpp:3:6:void SCT_Init()	8	static
+PWM_settings.cpp:34:6:void laser_pwm_set(int)	16	static
+PWM_settings.cpp:46:6:void pen_pwm_set(int)	24	static

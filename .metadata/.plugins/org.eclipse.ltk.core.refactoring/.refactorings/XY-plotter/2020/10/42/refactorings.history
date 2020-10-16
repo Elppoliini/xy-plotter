@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;XY-plotter/src/usb_cdc.cpp&apos; to &apos;XY-plotter.cpp&apos;" description="Rename resource &apos;usb_cdc.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/usb_cdc.cpp" name="XY-plotter.cpp" stamp="1602679924230" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;XY-plotter/inc/Movemment.h&apos; to &apos;Movemment.cpp&apos;" description="Rename resource &apos;Movemment.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="inc/Movemment.h" name="Movemment.cpp" stamp="1602742569809" updateReferences="true"/>
+</session>

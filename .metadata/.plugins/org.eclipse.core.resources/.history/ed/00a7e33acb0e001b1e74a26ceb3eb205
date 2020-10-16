@@ -1,0 +1,31 @@
+/*
+ * Parser.h
+ *
+ *  Created on: 22 Sep 2020
+ *      Author: johan
+ */
+
+#ifndef PARSER_H_
+#define PARSER_H_
+
+#include <string>
+#include <vector>
+#include "Tasks.cpp"
+
+// Class that guides to other tasks that c
+class Parser {
+public:
+	Parser();
+	virtual ~Parser();
+	void read(const char *str_); // read input from mdraw and prosess it
+	std::vector<std::string> getCommandLine(); // get the full command line
+	std::string reply(); // reply to mdraw and send to other classes to do the needed configuartions and movements
+private:
+	struct Tasks t; // structure that keeps the settings
+	std::string str; // string that we have received from mdraw
+	std::vector<std::string> commands; //vector that keeps all the commands/settings the gcode gives
+	void divideString(); // devide the string by space
+	void print(); // print the input from read()
+};
+
+#endif /* PARSER_H_ */

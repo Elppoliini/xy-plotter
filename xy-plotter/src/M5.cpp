@@ -9,8 +9,8 @@
 
 M5::M5() {
 	// TODO Auto-generated constructor stub
-
 }
+
 bool M5::isNumber(int pos){
 	int count=0;
 
@@ -49,17 +49,13 @@ bool M5::checkCommands(std::string letter,int pos){
 }
 
 std::string M5::reply(std::vector<std::string> str_,struct Tasks *t){
-
 	str = str_;
-
 	if(checkCommands("A",1) == true && isNumber(1) == true){
 		t->direktionX = stoi(str[1]);
 	}
-
 	if(checkCommands("B",2) == true && isNumber(2) == true){
 		t->directionY = stoi(str[2]);
 	}
-
 	if(checkCommands("H",3) == true && isNumber(3) == true){
 		t->height = stoi(str[3]);
 	}
@@ -69,8 +65,7 @@ std::string M5::reply(std::vector<std::string> str_,struct Tasks *t){
 	if(checkCommands("S",5) == true && isNumber(5) == true){
 		t->speed = stoi(str[5]);
 	}
-
 	return "OK\r\n";
-
 }
+
 

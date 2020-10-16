@@ -1,0 +1,23 @@
+/*
+ * Movemment.cpp
+ *
+ *  Created on: 15 Oct 2020
+ *      Author: johan
+ */
+
+#ifndef MOVEMMENT_CPP_
+#define MOVEMMENT_CPP_
+
+
+#include <string>
+
+/* Structure where the Gcode settings are saved to*/
+struct Movemment{
+	int posWidth;
+	int posHight;
+	int StepWidth;
+	int stepHight;
+};
+
+
+#endif /* MOVEMMENT_H_ */
